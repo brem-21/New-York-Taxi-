@@ -3,3 +3,5 @@ pandas
 sqlalchemy
 pyarrow
 psycopg2
+pylint
+black
