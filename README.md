@@ -1,5 +1,5 @@
-## Module 1 Homework: Docker & SQL
-### Question 1
+## Docker & SQL
+
 - Run docker with the python:3.12.8 image in an interactive mode, use the entrypoint bash and check the version of pip in the image.
 
 ```bash
@@ -9,12 +9,13 @@ pip --version
 ```
 - Output: `24.3.1`
 
-### Question 2
+### Understanding Docker networking and docker-compose
 - Determining  the hostname and port that pgadmin should use to connect to the postgres database.
 
 `postgres:5432`
 
-### Question 3
+### Trip Segmentation Count
+- During the period of October 1st 2019(inclusive) and November 1st 2019(exclusive), trips that happened.
 ```sql
 SELECT 
     SUM(CASE WHEN trip_distance <= 1 THEN 1 ELSE 0 END) AS "Up to 1 mile",
@@ -31,7 +32,7 @@ WHERE
 - Output 
 - ![segementation count](images/image.png)
 
-### Question 4
+### Longest trip for each day
  - The pick up day with the longest trip distance
  `2019-10-31`
 ```sql
@@ -56,8 +57,9 @@ LIMIT 1;
 ```
 - ![pickup day](<images/image copy.png>)
 
-### Question 5
-- Three Biggest pickup zones
+### Three biggest pickup zones
+- Three Biggest pickup zones.
+- The top pickup locations with over 13,000 in total_amount (across all trips) for 2019-10-18
 
 ```sql
 SELECT 
@@ -81,8 +83,9 @@ ORDER BY
 
 - ![biggest pickup zones](<images/image copy 3.png>)
 
-### Question 6
-- Drop off zone with the largest tip
+### Largest tip
+- Drop off zone with the largest tip.
+- For the passengers pickup in October 2019 in the zone named "East Harlem North", the drop off zone that had the largest tip
 ```sql
 SELECT 
     drop_zones."Zone" AS dropoff_zone,
