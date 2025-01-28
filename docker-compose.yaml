@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   pgdatabase:
     image: postgres:latest
@@ -14,6 +16,7 @@ services:
     restart: always
     ports:
       - "5435:5432"
+
   pgadmin:
     image: dpage/pgadmin4
     environment:
@@ -21,3 +24,18 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
       - "8080:80"
+
+  ingest_data:
+    build:
+      context: .
+      dockerfile: Dockerfile # path to your Dockerfile
+    environment:
+      - DB_HOST=pgdatabase
+      - DB_PORT=5432
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=ny_taxi
+    depends_on:
+      - pgdatabase
+    restart: on-failure
+ 
