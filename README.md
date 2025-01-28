@@ -12,7 +12,7 @@ pip --version
 ### Question 2
 - Determining  the hostname and port that pgadmin should use to connect to the postgres database.
 
-`postgres:5433`
+`postgres:5432`
 
 ### Question 3
 ```sql
