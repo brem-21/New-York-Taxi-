@@ -1,7 +1,7 @@
 numpy
 pandas
+psycopg2-binary
 sqlalchemy
 pyarrow
-psycopg2
 pylint
 black
