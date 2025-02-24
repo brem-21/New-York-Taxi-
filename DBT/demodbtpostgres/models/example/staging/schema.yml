@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+- name: staging
+  database: ny_taxi
+  schema: public
+
+  tables:
+    - name: green_taxi_data
+    - name: zones
