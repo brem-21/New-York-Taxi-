@@ -14,4 +14,4 @@ build-container:
 refactor: format lint
 
 		
-all: install lint format build-container deploy
+all: install refactor build-container
